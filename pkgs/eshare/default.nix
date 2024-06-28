@@ -17,24 +17,22 @@ pkgs.stdenv.mkDerivation {
   };
 
   buildInputs = with pkgs; [
-    alsa-lib
-    e2fsprogs # for libcom_err.so.2
-    elfutils # for libdw.so.1
-    libdrm
-    libunwind
+    fontconfig
+    xorg.libX11
+    libgcc
+    glib
     libglvnd
-    libgpg-error
-    libxkbcommon
     pango
-    xorg.libICE
-    xorg.libSM
-    flac
-    libvorbis
+    alsa-lib
+    libunwind
+    elfutils
+    libgpg-error
+    e2fsprogs
+    libdrm
   ];
 
   dontBuild = true;
   dontConfigure = true;
-  dontStrip = true;
   dontUnpack = true;
 
   nativeBuildInputs = with pkgs; [
